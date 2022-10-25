@@ -15,7 +15,7 @@ sales_tax = .088
 customer_one_total = 0.0
 customer_one_itemization = ""
 
-#Purchases
+#Customer Purchases
 customer_one_total += lovely_loveseat_price
 customer_one_itemization += lovely_loveseat_description
 
@@ -25,6 +25,7 @@ customer_one_itemization += luxurious_lamp_description
 customer_one_tax = customer_one_total * sales_tax
 customer_one_total += customer_one_tax
 
+#Print the purchase total and itemization
 print("Customer One Items:")
 print(customer_one_itemization)
 
