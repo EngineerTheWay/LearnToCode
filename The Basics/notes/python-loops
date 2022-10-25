@@ -1,0 +1,200 @@
+#This file includes examples of for loops in python
+
+#
+# *** Basic Example ***
+#
+
+board_games = ["Settlers of Catan", "Carcassone", "Power Grid", "Agricola", "Scrabble"]
+
+sport_games = ["football", "hockey", "baseball", "cricket"]
+
+for game in board_games:
+  print(game)
+# Note the indentation above
+
+for sport in sport_games:
+  print(sport)
+
+#
+# *** Loops using RANGE ***
+#
+
+# FOR loops in range
+loops = "Python Loops!"
+
+for temp in range(5):
+  print(loops)
+
+# FOR loops: dding to one to each iteration of a loop
+for temp_2 in range(6):
+  print("Loop is on iteration number " + str(temp_2 + 1))
+
+#
+# Countdown WHILE loop
+#
+
+countdown = 10
+while countdown >= 0:
+  print(countdown)
+  countdown -= 1
+print("We have liftoff!")
+# Output:
+# 10
+# 9
+# 8
+# 7
+# 6
+# 5
+# 4
+# 3
+# 2
+# 1
+# 0
+# We have liftoff!
+
+#
+# *** WHILE loops with a list ***
+#
+
+python_topics = ["variables", "control flow", "loops", "modules", "classes"]
+
+length = len(python_topics)
+index = 0
+
+while index < length:
+  print("I am learning about " + python_topics[index])
+  index += 1
+# Output:
+# I am learning about variables
+# I am learning about control flow
+# I am learning about loops
+# I am learning about modules
+# I am learning about classes
+
+#
+# *** breaking a FOR loop ***
+#
+
+dog_breeds_available_for_adoption = ["french_bulldog", "dalmatian", "shihtzu", "poodle", "collie"]
+dog_breed_I_want = "dalmatian"
+
+for dog_breed in dog_breeds_available_for_adoption:
+  print(dog_breed)
+  if dog_breed == dog_breed_I_want:
+    print("They have the dog I want!")
+    break
+# Output:
+# french_bulldog
+# dalmatian
+# They have the dog I want!
+
+#
+# *** Continue loops ***
+#
+
+ages = [12, 38, 34, 26, 21, 19, 67, 41, 17]
+
+for age in ages:
+  if age < 21:
+    continue
+  print(age)
+# Output:
+# 38
+# 34
+# 26
+# 21
+# 67
+# 41
+
+#
+# *** Nested Loops ***
+#
+sales_data = [[12, 17, 22], [2, 10, 3], [5, 12, 13]]
+
+scoops_sold = 0
+
+for location in sales_data:
+  print(location)
+  for scoops in location:
+    scoops_sold += scoops
+print(scoops_sold)
+#Output:
+# [12, 17, 22]
+# [2, 10, 3]
+# [5, 12, 13]
+# 96
+
+#
+# *** list comprehension with an elegant loop ***
+#
+
+grades = [90, 88, 62, 76, 74, 89, 48, 57]
+scaled_grades = []
+
+scaled_grades = [grade + 10 for grade in grades]
+print(scaled_grades)
+# Output: [100, 98, 72, 86, 84, 99, 58, 67]
+
+#
+# *** Selecting conditionals from a list using a loop ***
+#
+heights = [161, 164, 156, 144, 158, 170, 163, 163, 157]
+
+can_ride_coaster = [height for height in heights if height > 161]
+print(can_ride_coaster)
+# Output: [164, 170, 163, 163]
+
+#
+# Examples
+#
+
+#Printing out digits in a range
+single_digits = range(0, 10)
+squares = []
+
+#For loop, print digits and square the digits into a list
+for digit in single_digits:
+  print(digit)
+  squares.append(digit**2)
+print(squares)
+
+#Cube using a comprehension list
+cubes = [digit**3 for digit in single_digits]
+print(cubes)
+
+#
+# *** Using loops and lists ***
+#
+
+hairstyles = ["bouffant", "pixie", "dreadlocks", "crew", "bowl", "bob", "mohawk", "flattop"]
+
+prices = [30, 25, 40, 20, 20, 35, 50, 35]
+
+last_week = [2, 3, 5, 8, 4, 4, 6, 2]
+
+total_price = 0
+for price in prices:
+  total_price += price
+
+average_price = total_price / len(prices)
+print("Average Haircut Price: $", str(average_price))
+
+new_prices = [price - 5 for price in prices]
+print("New prices:", new_prices)
+
+total_revenue = 0
+for i in range(len(hairstyles)):
+  total_revenue += prices[i] * last_week[i]
+print("Total Revenue: $", total_revenue)
+
+average_daily_revenue = total_revenue / 7
+print("Avg Daily Revenue: $", average_daily_revenue)
+
+cuts_under_30 = [new_prices[i] for i in range(len(new_prices)) if new_prices[i] < 30]
+print(cuts_under_30)
+# Output:
+# Average Haircut Price: $ 31.875
+# New prices: [25, 20, 35, 15, 15, 30, 45, 30]
+# Total Revenue: $ 1085
+# Avg Daily Revenue: $ 155.0
+# [25, 20, 15, 15]
