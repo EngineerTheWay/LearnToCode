@@ -1,0 +1,63 @@
+#Manipulating strings using length and indices
+first_name = "Reiko"
+last_name = "Matsuki"
+
+def password_generator(first_name, last_name):
+  return first_name[len(first_name)-3:] + last_name[len(last_name)-3:]
+
+temp_password = password_generator(first_name, last_name)
+
+
+# Don't forget that strings are immutable, they can only be sliced and modified but can't replace an argument like in a list
+first_name = "Bob"
+last_name = "Daily"
+
+fixed_first_name = "R" + first_name[1:]
+print(fixed_first_name)
+
+
+## Using \ to ignore python built in functions
+password = "theycallme\"crazy\"91"
+
+#replicate the Python len() function
+def get_length(strInput):
+  length = 0
+  for i in strInput:
+    length += 1
+  return length
+
+
+#check for a letter in a string
+def letter_check(word, letter):
+    for i in word:
+        if i == letter:
+            containsLetter = True
+            break
+        else:
+            containsLetter = False
+    return containsLetter
+
+# Test: prints True
+print(letter_check("strawberry", "a"))
+# Test: prints False
+print(letter_check("strawberry", "o"))
+
+
+
+
+#using built in print("" in "") function
+def contains(big_string, little_string):
+  return little_string in big_string
+
+print(contains("watermelon", "melon"))
+
+#testing for common letters in two strings
+def common_letters(string_one, string_two):
+  commonList = []
+  for i in string_one:
+    if (i in string_two) and not (i in commonList):
+      commonList.append(i)
+  return commonList
+
+#Test the function, print it
+print(common_letters('manhattan', 'san francisco'))
