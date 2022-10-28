@@ -1,0 +1,155 @@
+#add double the index of a list
+def double_index(lst, index):
+  if index >= len(lst):
+    return lst
+  else:
+    new_lst = lst[0:index]
+    new_lst.append(lst[index] * 2)
+    return new_lst + lst[index+1:]
+
+#Test the function
+print(double_index([3, 8, -10, 12], 2))
+
+
+
+
+
+#return every 3 numbers in a range as a list
+def every_three_nums(start):
+  return list(range(start, 101, 3))
+
+#Test the function
+print(every_three_nums(101))
+
+
+
+
+
+
+#Check how many numbers are divisible by ten
+def divisible_by_ten(nums):
+  total_nums = 0
+  for num in nums:
+    if(num % 10 == 0):
+      total_nums += 1
+  return total_nums
+
+#Test the function
+print(divisible_by_ten([20, 25, 30, 35, 40]))
+
+
+
+#Add greeting to a list of names, then list names with greeting
+def add_greetings(names):
+  list_greetings = []
+  for name in names:
+    list_greetings.append("Hello, " + name)
+  return list_greetings
+
+
+#Test the function
+print(add_greetings(["Owen", "Max", "Sophie"]))
+# Output: ['Hello, Owen', 'Hello, Max', 'Hello, Sophie']
+
+
+
+#Remove even first numbers
+def delete_starting_evens(lst):
+  while (len(lst) > 0 and lst[0] % 2 == 0):
+    lst = lst[1:]
+  return lst
+
+#Test the function
+print(delete_starting_evens([4, 8, 10, 11, 12, 15]))
+print(delete_starting_evens([4, 8, 10]))
+Output:
+[11, 12, 15]
+[]
+
+
+
+
+#Raise base to the exponent add to list
+def exponents(bases, powers):
+  both_listed = []
+  for base in bases:
+    for power in powers:
+      both_listed.append(base ** power)
+  return both_listed
+
+#Test the function
+print(exponents([2, 3, 4], [1, 2, 3]))
+
+
+
+
+
+
+#Find the list with the larger sum
+def larger_sum(lst1, lst2):
+  lst1_sum = 0
+  lst2_sum = 0
+  for num in lst1:
+    lst1_sum += num
+  for num in lst2:
+    lst2_sum += num
+  if lst1_sum >= lst2_sum:
+    return lst1
+  else:
+    return lst2
+
+#Test the function
+print(larger_sum([1, 9, 5], [2, 3, 7]))
+#Output: [1, 9, 5]
+
+
+
+
+
+#Add list until over 9000
+def over_nine_thousand(lst):
+  lst_sum = 0
+  for num in lst:
+    lst_sum += num
+    if lst_sum > 9000:
+      break
+  return lst_sum
+
+
+#Test the function
+print(over_nine_thousand([8000, 900, 120, 5000]))
+#Output: 9020
+
+
+
+
+
+
+#Return the maximum number of a list
+def max_num(nums):
+  max_number = nums[0]
+  for num in nums:
+    if max_number < num:
+      max_number = num
+  return max_number
+
+#Test the function
+print(max_num([50, -10, 0, 75, 20]))
+#Output: 75
+
+
+
+
+
+#Check for matching indices
+def same_values(lst1, lst2):
+  comb_lst = []
+  for index in range(len(lst1)):
+    if lst1[index] == lst2[index]:
+      comb_lst.append(index)
+  return comb_lst
+
+
+#Test the function
+print(same_values([5, 1, -10, 3, 3], [5, 10, -10, 3, 5]))
+# Output: [0, 2, 3]
