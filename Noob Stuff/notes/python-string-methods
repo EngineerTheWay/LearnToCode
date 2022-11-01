@@ -1,0 +1,14 @@
+.lower() returns the string with all lowercase characters.
+.upper() returns the string with all uppercase characters.
+.title() returns the string in title case, which means the first letter of each word is capitalized.
+.split() is performed on a string, takes one argument, and returns a list of substrings found between the given argument
+join() is essentially the opposite of .split(), it joins a list of strings together with a given delimiter.
+.strip() Stripping a string removes all whitespace characters from the beginning and end.
+.replace() Replace takes two arguments and replaces all instances of the first argument in a string with the second argument
+.find() takes a string as an argument and searching the string it was run on for that string.  It then returns the first index value where that string is located.
+#^ You can also search for larger strings, and .find() will return the index value of the first character of that string.
+.format() takes variables as an argument and includes them in the string that it is run on. You include {} marks as placeholders for where those variables will be imported.
+
+Escape Sequences:
+\n Newline
+\t Horizontal Tab

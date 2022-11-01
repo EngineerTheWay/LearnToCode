@@ -8,12 +8,21 @@ def password_generator(first_name, last_name):
 temp_password = password_generator(first_name, last_name)
 
 
+
+
+
+
+
 # Don't forget that strings are immutable, they can only be sliced and modified but can't replace an argument like in a list
 first_name = "Bob"
 last_name = "Daily"
 
 fixed_first_name = "R" + first_name[1:]
 print(fixed_first_name)
+
+
+
+
 
 
 ## Using \ to ignore python built in functions
@@ -25,6 +34,10 @@ def get_length(strInput):
   for i in strInput:
     length += 1
   return length
+
+
+
+
 
 
 #check for a letter in a string
@@ -61,3 +74,140 @@ def common_letters(string_one, string_two):
 
 #Test the function, print it
 print(common_letters('manhattan', 'san francisco'))
+
+
+
+
+# Split a list of names in various ways
+authors = "Audre Lorde,Gabriela Mistral,Jean Toomer,An Qi,Walt Whitman,Shel Silverstein,Carmen Boullosa,Kamala Suraiyya,Langston Hughes,Adrienne Rich,Nikki Giovanni"
+
+author_names = authors.split(',')
+print(author_names)
+
+author_last_names = []
+
+for name in author_names:
+  author_last_names.append(name.split()[-1])
+
+print(author_last_names)
+
+
+
+
+# Using comma seperated variables
+winter_trees_lines = ['All the complicated details', 'of the attiring and', 'the disattiring are completed!', 'A liquid moon', 'moves gently among', 'the long branches.', 'Thus having prepared their buds', 'against a sure winter', 'the wise trees', 'stand sleeping in the cold.']
+
+winter_trees_full = ','.join(winter_trees_lines)
+print(winter_trees_full)
+#Output: All the complicated details,of the attiring and,the disattiring are completed!,A liquid moon,moves gently among,the long branches.,Thus having prepared their buds,against a sure winter,the wise trees,stand sleeping in the cold.
+
+
+
+
+# Using escape sequences
+winter_trees_lines = ['All the complicated details', 'of the attiring and', 'the disattiring are completed!', 'A liquid moon', 'moves gently among', 'the long branches.', 'Thus having prepared their buds', 'against a sure winter', 'the wise trees', 'stand sleeping in the cold.']
+
+winter_trees_full = '\n'.join(winter_trees_lines)
+print(winter_trees_full)
+# Output:
+# All the complicated details
+# of the attiring and
+# the disattiring are completed!
+# A liquid moon
+# moves gently among
+# the long branches.
+# Thus having prepared their buds
+# against a sure winter
+# the wise trees
+# stand sleeping in the cold.
+
+
+
+
+# Strip and joint from a list of strings
+love_maybe_lines = ['Always    ', '     in the middle of our bloodiest battles  ', 'you lay down your arms', '           like flowering mines    ','\n' ,'   to conquer me home.    ']
+
+love_maybe_lines_stripped = []
+
+for line in love_maybe_lines:
+  love_maybe_lines_stripped.append(line.strip())
+print(love_maybe_lines_stripped)
+
+love_maybe_full = '\n'.join(love_maybe_lines_stripped)
+print(love_maybe_full)
+
+
+
+
+
+# Using the replace function
+toomer_bio = \
+"""
+Nathan Pinchback Tomer, who adopted the name Jean Tomer early in his literary career, was born in Washington, D.C. in 1894. Jean is the son of Nathan Tomer was a mixed-race freedman, born into slavery in 1839 in Chatham County, North Carolina. Jean Tomer is most well known for his first book Cane, which vividly portrays the life of African-Americans in southern farmlands.
+"""
+
+toomer_bio_fixed = toomer_bio.replace('Tomer', 'Toomer')
+print(toomer_bio_fixed)
+
+
+
+
+# Formating w/ .format() within a function
+def poem_description(publishing_date, author, title, original_work):
+  poem_desc = "The poem {title} by {author} was originally published in {original_work} in {publishing_date}.".format(publishing_date=publishing_date, author=author, title=title, original_work=original_work)
+  return poem_desc
+
+my_beard_description = poem_description(author="Shel Silverstein", title="My Beard", original_work="Where the Sidewalk Ends", publishing_date="1974")
+print(my_beard_description)
+
+
+
+
+
+
+#
+# Using string manipulation functions together *** EXAMPLE ***
+#
+highlighted_poems = "Afterimages:Audre Lorde:1997,  The Shadow:William Carlos Williams:1915, Ecstasy:Gabriela Mistral:1925,   Georgia Dusk:Jean Toomer:1923,   Parting Before Daybreak:An Qi:2014, The Untold Want:Walt Whitman:1871, Mr. Grumpledump's Song:Shel Silverstein:2004, Angel Sound Mexico City:Carmen Boullosa:2013, In Love:Kamala Suraiyya:1965, Dream Variations:Langston Hughes:1994, Dreamwood:Adrienne Rich:1987"
+#Comparison output
+print(highlighted_poems)
+
+#Split and save into a list
+highlighted_poems_list = highlighted_poems.split(",")
+#Check to see that the list was created properly
+print(highlighted_poems_list)
+
+#Strip all the whitespace
+#Create an empty list
+highlighted_poems_stripped = []
+
+#string whitespace and append to the new list
+for poem in highlighted_poems_list:
+  highlighted_poems_stripped.append(poem.strip())
+#Check to see if whitespace was removed
+print(highlighted_poems_stripped)
+
+#Seperate the details of the list
+#define the list for the details
+highlighted_poems_details = []
+
+#define the function to split up the list
+for poem in highlighted_poems_stripped:
+  highlighted_poems_details.append(poem.split(":"))
+
+print(highlighted_poems_details)
+
+#create three new empty lists
+titles = []
+poets = []
+dates = []
+
+#Split up the details into new lists
+for detail in highlighted_poems_details:
+  titles.append(detail[0])
+  poets.append(detail[1])
+  dates.append(detail[2])
+
+# Define function to print all the details in a readable format.
+for i in range(0,len(highlighted_poems_details)):
+  print("The poem {} was published by {} in {}.".format(titles[i], poets[i], dates[i]))
