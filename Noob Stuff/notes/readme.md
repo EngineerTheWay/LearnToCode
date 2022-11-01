@@ -1,1 +1,1 @@
-# This folder contains reference notes I took when learning Python, including challenge problems I solved using the relevant methods learned.
+# This folder contains notes I took when learning Python, including challenge problems I solved using the relevant methods learned. I used these as a reference tool as I began to combine these methods in more complex projects.
