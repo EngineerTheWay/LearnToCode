@@ -1,0 +1,1 @@
+This folder contains notes I took when learning Python, including challenge problems I solved using that knowledge. I used these as a reference tool as I began to combine these methods in more complex projects.
