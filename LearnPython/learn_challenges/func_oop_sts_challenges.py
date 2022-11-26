@@ -68,9 +68,9 @@ def delete_starting_evens(lst):
 #Test the function
 print(delete_starting_evens([4, 8, 10, 11, 12, 15]))
 print(delete_starting_evens([4, 8, 10]))
-Output:
-[11, 12, 15]
-[]
+#Output:
+#[11, 12, 15]
+#[]
 
 
 
